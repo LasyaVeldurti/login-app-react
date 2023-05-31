@@ -1,0 +1,9 @@
+/* Write your CSS here */
+.login {
+  padding: 10px;
+  border-radius: 10px;
+  background-color: f8fafc;
+  border-style: none;
+  color: #303150;
+  font-weight: bold;
+}
