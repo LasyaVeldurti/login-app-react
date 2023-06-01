@@ -3,14 +3,19 @@ import {Component} from 'react'
 
 import {LoginMessage, LogoutMessage} from '../Message'
 
-import LoginButton from '../Login'
-
 import LogoutButton from '../Logout'
+import LoginButton from '../Login'
 
 import './index.css'
 
 class Home extends Component {
-  state = {isLoggedIn: false}
+  state = {isLoggedIn: true}
+
+  onClickLogout = () => {
+    console.log('clicked')
+
+    this.setState(prevState => ({isLoggedIn: !prevState.isLoggedIn}))
+  }
 
   render() {
     const {isLoggedIn} = this.state
@@ -21,12 +26,12 @@ class Home extends Component {
           {isLoggedIn ? (
             <>
               <LogoutMessage />
-              <LogoutButton />
+              <LogoutButton onClick={this.onClickLogout} />
             </>
           ) : (
             <>
               <LoginMessage />
-              <LoginButton />
+              <LoginButton onClick={this.onClickLogin} />
             </>
           )}
         </div>
